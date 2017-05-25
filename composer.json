@@ -1,7 +1,7 @@
 {
-  "name": "xdna/xdna-core",
+  "name": "xdna/core",
   "description": "xDNA core",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "proprietary",
   "keywords": ["mvc","framework","multi apps","enterprise"],
   "authors": [
