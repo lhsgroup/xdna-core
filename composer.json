@@ -1,0 +1,26 @@
+{
+  "name": "xdna/xdna-core",
+  "description": "xDNA core",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "keywords": ["mvc","framework","multi apps","enterprise"],
+  "authors": [
+    {
+      "name": "Luca Vignali",
+      "email": "luca@lhsgroup.net"
+    }
+  ],
+  "config": {
+    "platform": {
+      "php": "5.5"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "xdna\\core\\": "vendor/xdna/core"
+    }
+  }
+}
