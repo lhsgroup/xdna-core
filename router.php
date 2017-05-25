@@ -11,7 +11,7 @@ class router {
             }
         } else {
             $url = '/';
-        }        
+        }
         if($url != '/') {
             $uri = explode('/',$url);
             array_shift($uri); // remove first empty value of /
@@ -35,7 +35,7 @@ class router {
 
     private static function _startApp($uri) {
         if(self::_handleApp(self::$_ENV['apps']['/'],$uri)) { // case /
-           return;
+            return;
         } else if(count($uri) >0 && isset(self::$_ENV['apps']['/'.$uri[0]])) { // case /app/
             array_shift($uri);
             foreach(self::$_ENV['apps'] as $path=>$app_name) {
@@ -43,8 +43,11 @@ class router {
                     return;
                 }
             }
-        } else { // case /app/view
-            die("Router not found");
+        } else { // page not found
+            //load default app and exec pageNotFound method
+            $app_class = '\\apps\\'.self::$_ENV['apps']['/'].'\\'.self::$_ENV['apps']['/'];
+            $app = new $app_class([]);
+            $app->pageNotFound();
         }
     }
 }
